@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>JDC: BASTON</title>
+	<link rel="stylesheet" type="text/css" 
+	      href="fonts/webfontkit-pixelfarmpets/stylesheet.css" />
+		  
+	<link rel="stylesheet" type="text/css" 
+	      href="fonts/webfontkit-pokemons/stylesheet.css" />
+	<style>
+	ul{list-style-type:none;}
+	#plateau img{width:960px;border-radius:25px 25px;border:10px solid blue;}
+	
+	#tour{position:absolute; top:10px; left:795px;background-color:lightgreen;width:210px; height:71px;
+			border-radius: 18px 18px;}
+	#tour2jeu{padding-left: 50px;}
+	#menuJeu{
+	         float:left;position:absolute; left:-99px;
+             background-color:lightgreen;
+			 border-radius:15px 15px;
+			 width:124px;}
+	#menuJeu ul{text-align:right;padding-right:10px;}
+	#menuJeu ul li{visibility:hidden;background-color:lightgreen;color:grey;text-align:right;}
+	#menu:hover{left:0px;}
+	#menuJeu:hover ul>li{padding-left:59px;;visibility:visible;border:1px solid green;}
+	/*  Style pour les cartes */
+
+	div[class*="carte"]{position:absolute;border-radius:7px 7px;color:white;}
+		
+	.carteAdv{background-color:black;border:1px solid gold;}
+	.carteMe{background-color:purple;border:1px solid silver;}
+			  
+	.carteAdv ul, .carteMe ul{margin-left:-20px; width:85px;}
+	.cateAdv ul:last-child, .carteMe ul:last-child{text-align:center;}
+	
+	li[id*="monster"]{font-family:'pixelfarm_pets_unitedregular';  font-size: 3.25em;}
+	li[id*="mymonster"]{font-family: 'pokemon_pixels_1regular';  font-size: 2.55em;margin-top:5px;}
+	
+	
+	#carte01{top:66px;left:368px;margin-right:10px;}
+	#carte02{top:66px;left:472px;margin-right:10px;}
+	#carte03{top:66px;left:576px;margin-right:10px;}
+	#carte04{top:66px;left:680px;margin-right:10px;}
+	
+	.emplacement{ height:146px;width:102px;text-align: center;}
+	
+	#mpaquet{top:312px;left:60px; font-weight:bold; background-color:#8B008B;}
+	#mpaquet:hover{transform: rotate(20deg) ;}
+	
+	#mCimetiere{top:312px;left:908px;;font-style:italic;background-color:#6A455D;} /* nom de couleur: Gorge-de-pigeon */
+	#mCimetiere:hover{transform: rotate(-20deg) ;}
+	/* Carte en JEU: ME */
+	#mcarte01{top:550px;left:368px;}  
+	#mcarte02{top:550px;left:488px;} 
+	#mcarte03{top:550px;left:604px;} 
+	#mcarte04{top:550px;left:722px;} 
+	
+	div[id*="mcarte"]:hover{transform: translate(0,-15px);}
+		
+	.attaque{background-color:navy;width:120px;height:153px;border:2px solid white;}
+	#att1{top:400px; left:368px;}
+	#att2{top:400px; left:580px;}
+	
+	.pioche{top:312px;left:172px;border:2px solid grey;}
+	.precim{top:312px;left:790px;border:2px solid yellow;}
+	
+    .pv{font-size:3.25em;color:green;padding:5px;border-radius:15px 15px;background-color:yellow;}
+	#pvadv{position:absolute;top:136px;left:85px;}
+	#pvme{position:absolute;top:576px;left:85px;}
+	
+	#jeuadv{position: absolute;top: 46px;left: 370px;}
+	#jeuadv span{margin:34px;}
+	</style>
+</head>
+<body>
+	<header>
+		<h1> mini HEARSTONE</h1>
+	</header>
+	
+	<nav id="menuJeu" >
+		<ul><u>=</u>
+			<li><a href="#" title="Démarrer le jeu"onClick="console.log('>>Lancement du jeu');" >D</a></li>
+			<li> Q</li>
+		</ul>
+	</nav>
+	
+	<section>
+	    <div id="jeuadv">
+			<span>[ 1 ]</span> |
+			<span>[ 2 ]</span> |
+			<span>[ 3 ]</span> |
+			<span>[ 4 ]</span>
+			
+		</div>
+	    <!-- TOUR de jeu -->
+		<div id="tour">
+			<table>
+				<tr><td>QUI: ENI/MOI</td><td rowspan="2" id="tour2jeu"><h1>01</h1></td></tr>
+				<tr><td>PHASE:</td></tr>
+			</table>
+		</div>
+		
+		<figure class="map" id="plateau">
+				<img src="img/plateau.jpg" alt="la carte" />
+		</figure>
+	
+		<div id="pvadv" class="pv">
+			<span id="vieadv">20</span>
+		</div>
+		
+		
+		<!-- paquet de cartes -->
+		<div id="mpaquet" class="carteMe emplacement" 
+		     title="Paquet de cartes">
+			<p>paquet</p>
+			<hr/>
+			<span id="ctrPaquet">[ 0 / 0 ]</span>
+		</div>
+		
+		<!-- <div id="pioche" class="pioche"> -->
+		</div>
+		<!-- cimetière -->
+		<div id="precim" class="precim" </div>
+		<div id="mCimetiere" class="carteMe emplacement"  title="Cimetière">
+			<br/>
+			<p>R.E.P.</p>
+			<hr/>
+			<span id="ctrCimetiere">( 0 )</span>
+		</div>
+		
+		<div id="pvme" class="pv">
+			<span id="vieme">20</span>
+		</div>
+	</section>
+
+	<!-- JAVASCRIPT -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/myCarteJsBeta.js"></script>
+</body>
+</html>
