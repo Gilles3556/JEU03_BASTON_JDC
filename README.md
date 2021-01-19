@@ -9,4 +9,5 @@ Quelques libertés ont été prises:
 
 ATTENTION: la gestion de tour de jeu n'est pas encore codée!
 
-![Screenshot](./copiesEcran/screenshot.png)
+![Screenshot](./copiesEcran/Capture.png)
+
